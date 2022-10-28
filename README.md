@@ -1,4 +1,4 @@
-# 0x07. Networking Basics #0
+# 0x00. AirBnB clone - The console
 ``Group project`` ``Python`` ``OOP``
 
 ## Learning Objectives

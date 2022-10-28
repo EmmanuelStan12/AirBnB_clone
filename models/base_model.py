@@ -9,11 +9,23 @@ class BaseModel:
     """
     This is a base model class
     """
-    def __init__(self):
-        self.id = str(uuid.uuid4())
-        time = datetime.datetime.now()
-        self.created_at = time
-        self.updated_at = time
+    def __init__(self, *args, **kwargs):
+        if len(kwargs) != 0:
+            self.__create_dict(kwargs)
+        else:
+            self.id = str(uuid.uuid4())
+            time = datetime.datetime.now()
+            self.created_at = time
+            self.updated_at = time
+
+    def __create_dict(self, args):
+        """
+        Creates a new instance from dictionary
+        """
+        keys = ['id', 'created_at', 'updated_at']
+        for key, value in args.items():
+            if key in keys:
+                setattr(self, key, value)
 
     def __str__(self):
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)

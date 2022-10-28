@@ -19,6 +19,17 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(self.id, None)
         self.assertEqual(b.created_at, b.updated_at)
 
+    def test_initialization_with_dictionary(self):
+        """
+        Tests the initialization with dictionary
+        """
+        b = BaseModel()
+        d = b.to_dict()
+        b2 = BaseModel(**d)
+        self.assertEqual(str(b), str(b2))
+
+
+
     def test_str(self):
         """
         Tests the return of a string
