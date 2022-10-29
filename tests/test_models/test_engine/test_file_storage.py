@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """Test file Storage"""
 import unittest
-import json
-import os
-from models.base_model import BaseModel
 
 
 class TestFileStorage(unittest.TestCase):

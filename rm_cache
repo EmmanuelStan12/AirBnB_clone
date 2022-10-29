@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+rm -R */__pycache__/
+rm -R */**/__pycache__/
