@@ -4,6 +4,8 @@ This runs unittests for base_model file
 """
 import unittest
 from models.base_model import BaseModel
+import os
+import pep8
 
 
 class TestBaseModel(unittest.TestCase):
@@ -19,6 +21,12 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(self.id, None)
         self.assertEqual(b.created_at, b.updated_at)
 
+    def test_pep8_BaseModel(self):
+        """Testing for pep8"""
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/base_model.py'])
+        self.assertEqual(p.total_errors, 0, "Check pep8")
+
     def test_initialization_with_dictionary(self):
         """
         Tests the initialization with dictionary
@@ -27,8 +35,6 @@ class TestBaseModel(unittest.TestCase):
         d = b.to_dict()
         b2 = BaseModel(**d)
         self.assertEqual(str(b), str(b2))
-
-
 
     def test_str(self):
         """
@@ -46,11 +52,16 @@ class TestBaseModel(unittest.TestCase):
         b.save()
         self.assertNotEqual(b.created_at, b.updated_at)
 
-    def test_to_dict(self):
+    def test_kwargs(self):
         """
-        Tests the 'to dictionary function' for all keys and values
+        Testing Kwargs with initialization 
         """
         b = BaseModel()
-        dict = b.to_dict()
-        result = "{'__class__': 'BaseModel', 'updated_at': '{}', 'created_at': '{}', 'id': '{}'}".format(b.updated_at, b.created_at, b.id)
-        self.assertEqual(str(dict), result)
+        self.assertEqual(type(b).__name__, "BaseModel")
+        self.assertTrue(hasattr(b, "id"))
+        self.assertTrue(hasattr(b, "created_at"))
+        self.assertTrue(hasattr(b, 'updated_at'))
+        self.assertTrue(hasattr(b, "__class__"))
+
+if __name__ == "__main__":
+    unittest.main()
