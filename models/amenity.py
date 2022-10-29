@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
-It contains the City class
+It contains the Amenity class
 """
 
+from models.base_model import BaseModel
 
-class Amenity:
+
+class Amenity(BaseModel):
     """
-    The City class
+    The Amenity class
     """
     name = ""

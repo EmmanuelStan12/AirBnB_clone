@@ -3,8 +3,10 @@
 It contains the City class
 """
 
+from models.base_model import BaseModel
 
-class Review:
+
+class Review(BaseModel):
     """
     The Review class
     """
