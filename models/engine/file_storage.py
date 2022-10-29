@@ -9,6 +9,7 @@ from models import base_model
 
 BaseModel = base_model.BaseModel
 
+
 class FileStorage:
     """
     This is a file storage class

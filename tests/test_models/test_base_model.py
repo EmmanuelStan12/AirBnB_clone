@@ -54,7 +54,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_kwargs(self):
         """
-        Testing Kwargs with initialization 
+        Testing Kwargs with initialization
         """
         b = BaseModel()
         self.assertEqual(type(b).__name__, "BaseModel")
@@ -62,6 +62,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(hasattr(b, "created_at"))
         self.assertTrue(hasattr(b, 'updated_at'))
         self.assertTrue(hasattr(b, "__class__"))
+
 
 if __name__ == "__main__":
     unittest.main()
