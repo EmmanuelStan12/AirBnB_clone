@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-import uuid
-from datetime import datetime
-import models
 """
 This module contains BaseModel class
 """
+
+import uuid
+from datetime import datetime
+import models
 
 
 class BaseModel:
