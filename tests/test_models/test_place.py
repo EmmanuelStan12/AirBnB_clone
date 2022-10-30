@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Test file Storage"""
+
 import unittest
 from models.place import Place
 
@@ -20,6 +21,7 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(Place, "latitude"))
         self.assertTrue(hasattr(Place, "longitude"))
         self.assertTrue(hasattr(Place, "amenity_ids"))
+
 
 if __name__ == '__main__':
     unittest.main()
