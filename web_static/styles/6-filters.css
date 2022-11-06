@@ -67,6 +67,7 @@ ul.popover {
 	box-sizing: border-box;
 	padding: 15px 20px 20px;
 	display: none;
+	z-index: 99;
 }
 
 div.amenities:hover ul.popover, div.locations:hover ul.popover {
